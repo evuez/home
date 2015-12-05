@@ -9,6 +9,11 @@ files=(
   .config/sublime-text-3/Packages/User/Preferences.sublime-settings
   .config/sublime-text-3/Packages/User/Python.sublime-settings
   .config/sublime-text-3/Packages/User/Ruby.sublime-settings
+  bin/subl-update.sh
+  bin/lamp
+  bin/mongodb
+  bin/redis
+  bin/sideq
 )
 
 echo -n "Creating backup directory at $bak... "

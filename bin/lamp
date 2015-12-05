@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "${1:-''}" in
+'start')
+sudo service mariadb start
+sudo service httpd start
+;;
+
+'stop')
+sudo service mariadb stop
+sudo service httpd stop
+;;
+
+'restart')
+lamp stop
+lamp start
+;;
+
+'reload')
+sudo service httpd reload
+;;
+*)
+echo "start, stop or restart only"
+;;
+esac
