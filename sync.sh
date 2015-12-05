@@ -2,7 +2,14 @@
 
 dir=~/Sync
 bak=~/Sync/bak
-files=".vimrc .gitconfig .inputrc"
+files=(
+  .gitconfig
+  .vimrc
+  .inputrc
+  .config/sublime-text-3/Packages/User/Preferences.sublime-settings
+  .config/sublime-text-3/Packages/User/Python.sublime-settings
+  .config/sublime-text-3/Packages/User/Ruby.sublime-settings
+)
 
 echo -n "Creating backup directory at $bak... "
 mkdir -p $bak
@@ -13,8 +20,9 @@ cd $dir
 echo "done!"
 
 echo "Backing up synced files..."
-for file in $files; do
-    mv ~/$file $bak
+for file in ${files[@]}; do
+    cp --parents -L ~/$file $bak
+    rm ~/$file
     echo -n "Creating symlink to $file in home directory... "
     ln -s $dir/$file ~/$file
     echo "done!"
