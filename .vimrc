@@ -38,6 +38,9 @@ set incsearch
 " Make searches case insensitive
 set ignorecase
 
+" Make searches case sensitive if search starts with a capital
+set smartcase
+
 " Show info along bottom
 set ruler
 
@@ -49,3 +52,9 @@ set autoindent
 
 " Do not wrap text
 set nowrap
+
+" Auto-reload files
+set autoread
+
+" Disable cursor blink
+set guicursor=a:blinkon0
