@@ -27,3 +27,25 @@ set history=100
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Highlight current line
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+" Enable incremental search
+set incsearch
+
+" Make searches case insensitive
+set ignorecase
+
+" Show info along bottom
+set ruler
+
+" Visual bell instead of beep
+set visualbell
+
+" Auto-indent
+set autoindent
+
+" Do not wrap text
+set nowrap
