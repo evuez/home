@@ -14,6 +14,7 @@ files=(
   bin/lamp
   bin/mongodb
   bin/redis
+  bin/pgsql
   bin/sideq
 )
 
