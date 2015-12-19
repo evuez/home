@@ -1,5 +1,7 @@
 [user]
-	email = helloevuez@gmail.com
-	name = evuez
+    email = helloevuez@gmail.com
+    name = evuez
 [core]
-	editor = vim
+    editor = vim
+[merge]
+    ff = no
