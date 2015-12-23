@@ -58,3 +58,6 @@ set autoread
 
 " Disable cursor blink
 set guicursor=a:blinkon0
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
