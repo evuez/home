@@ -6,6 +6,7 @@ files=(
   .gitconfig
   .vimrc
   .inputrc
+  .bashrc
   .config/sublime-text-3/Packages/User/Preferences.sublime-settings
   .config/sublime-text-3/Packages/User/Python.sublime-settings
   .config/sublime-text-3/Packages/User/Ruby.sublime-settings
