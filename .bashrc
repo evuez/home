@@ -11,8 +11,13 @@ fi
 # User specific aliases and functions
 # export PS1="[\u@\h \W]\$ "
 
+# Get and display git branch
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    return 0
+  fi
+
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-export PS1="\u@\h \[\033[90m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
+export PS1="\[\033[90m\]\u@\h\[\033[00m\] \W\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
