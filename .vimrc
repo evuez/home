@@ -1,6 +1,10 @@
 set nocompatible
 filetype off
 
+" Set leader to ','
+let mapleader=','
+let maplocalleader=','
+
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -81,3 +85,10 @@ let g:ctrlp_custom_ignore = {
 " Set cwd at the level of the nearest .git directory
 let g:ctrlp_working_path_mode = 'r'
 
+" Use a leader instead of the actual named binding
+nmap <leader>p :CtrlP<cr>
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
