@@ -15,6 +15,8 @@ Plugin 'tpope/vim-surround'
 call vundle#end()
 
 
+" Set default colorscheme
+colorscheme Tomorrow-Night-Bright
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
