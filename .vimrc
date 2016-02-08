@@ -1,5 +1,14 @@
-" This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+call vundle#end()
+
+
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
@@ -61,3 +70,14 @@ set guicursor=a:blinkon0
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+""" CtrlP settings
+" Ignore commonly ignored directory and files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Set cwd at the level of the nearest .git directory
+let g:ctrlp_working_path_mode = 'r'
+
