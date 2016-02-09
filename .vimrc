@@ -37,6 +37,10 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " Set color column for Python
 au FileType python set colorcolumn=80
 
+" Set indentation options for Ruby
+au FileType ruby set tabstop=2
+au FileType ruby set shiftwidth=2
+
 " Leave hidden buffer open
 set hidden
 
