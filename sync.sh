@@ -5,6 +5,7 @@ bak=~/Sync/bak
 files=(
   .gitconfig
   .vimrc
+  .vim/colors/Tomorrow-Night-Bright.vim
   .inputrc
   .bashrc
   .config/sublime-text-3/Packages/User/Preferences.sublime-settings
