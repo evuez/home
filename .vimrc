@@ -30,9 +30,12 @@ filetype plugin indent on
 " Show line numbers
 set number
 
-" Force wrap at col 72 for git commit bodies
+" Force wrap at col 72 for Git commit bodies
 au FileType gitcommit set tw=72
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+" Set color column for Python
+au FileType python set colorcolumn=80
 
 " Leave hidden buffer open
 set hidden
