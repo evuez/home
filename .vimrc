@@ -37,6 +37,9 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " Leave hidden buffer open
 set hidden
 
+" Autoread file modifications
+set autoread
+
 " Save up to 100 commands
 set history=100
 
