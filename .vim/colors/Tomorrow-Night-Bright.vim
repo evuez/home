@@ -472,7 +472,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Git
     call <SID>X("diffAdded", s:green, "", "")
     call <SID>X("diffRemoved", s:red, "", "")
-    call <SID>X("gitcommitSummary", "", "", "bold")
+    call <SID>X("gitcommitSummary", s:aqua, "", "bold")
 
     " Delete Functions
     delf <SID>X
