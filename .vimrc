@@ -92,6 +92,12 @@ set guicursor=a:blinkon0
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Autosave sessions
+fu! SaveSession()
+    execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+autocmd VimLeave * call SaveSession()
+
 """ CtrlP settings
 " Ignore commonly ignored directory and files
 let g:ctrlp_custom_ignore = {
