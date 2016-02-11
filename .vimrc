@@ -41,6 +41,9 @@ au FileType python set colorcolumn=80
 au FileType ruby set tabstop=2
 au FileType ruby set shiftwidth=2
 
+" Set syntax as Markdown for *.md files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Leave hidden buffer open
 set hidden
 
