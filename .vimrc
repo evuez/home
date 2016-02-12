@@ -41,6 +41,9 @@ au FileType python set colorcolumn=80
 au FileType ruby set tabstop=2
 au FileType ruby set shiftwidth=2
 
+" Set syntax as Markdown for *.md files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Leave hidden buffer open
 set hidden
 
@@ -88,6 +91,12 @@ set guicursor=a:blinkon0
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Autosave sessions
+fu! SaveSession()
+    execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+autocmd VimLeave * call SaveSession()
 
 """ CtrlP settings
 " Ignore commonly ignored directory and files
