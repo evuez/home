@@ -44,6 +44,9 @@ au FileType ruby set shiftwidth=2
 " Set syntax as Markdown for *.md files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Auto wrap in markdown files
+au FileType markdown set wrap
+
 " Leave hidden buffer open
 set hidden
 
