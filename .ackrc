@@ -1,0 +1,3 @@
+--ignore-dir=env/
+--ignore-dir=tmp/
+--ignore-dir=vendor/

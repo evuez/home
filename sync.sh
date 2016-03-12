@@ -8,6 +8,7 @@ files=(
   .vim/colors/Tomorrow-Night-Bright.vim
   .inputrc
   .bashrc
+  .ackrc
   .config/sublime-text-3/Packages/User/Preferences.sublime-settings
   .config/sublime-text-3/Packages/User/Python.sublime-settings
   .config/sublime-text-3/Packages/User/Ruby.sublime-settings
