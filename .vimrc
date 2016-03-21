@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 
@@ -94,12 +95,6 @@ set guicursor=a:blinkon0
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Autosave sessions
-fu! SaveSession()
-    execute 'mksession! ' . getcwd() . '/.session.vim'
-endfunction
-autocmd VimLeave * call SaveSession()
 
 """ CtrlP settings
 " Ignore commonly ignored directory and files
