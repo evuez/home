@@ -1,10 +1,11 @@
-# Sync on a new computer
+# New install
 
 ```bash
-sudo dnf install vim ack git terminator
+make 
+```
 
-mkdir -p .vim/colors .config/terminator ~/bin
+# Pull and sync
 
-git clone git@github.com:evuez/home.git ~/Sync
-~/Sync/sync.sh
+```bash
+make sync
 ```
