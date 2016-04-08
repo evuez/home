@@ -6,6 +6,7 @@ files=(
   .gitconfig
   .vimrc
   .vim/colors/Tomorrow-Night-Bright.vim
+  .vim/bundle/Vundle.vim
   .inputrc
   .bashrc
   .ackrc
@@ -31,8 +32,8 @@ echo "done!"
 
 echo "Backing up synced files..."
 for file in ${files[@]}; do
-    cp --parents -L ~/$file $bak
-    rm ~/$file
+    cp -r --parents -L ~/$file $bak
+    rm -r ~/$file
     echo -n "Creating symlink to $file in home directory... "
     ln -s $dir/$file ~/$file
     echo "done!"
