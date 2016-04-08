@@ -5,13 +5,13 @@ sync:
 	vim +PluginInstall +qall
 
 install:
-	hash vim 2>/dev/null || sudo dnf install vim
-	hash git 2>/dev/null || sudo dnf install git
-	hash ack 2>/dev/null || sudo dnf install ack
-	hash htop 2>/dev/null || sudo dnf install htop
-	hash xsel 2>/dev/null || sudo dnf install xsel
-	hash http 2>/dev/null || sudo dnf install httpie
-	hash terminator 2>/dev/null || sudo dnf install terminator
+	hash vim 2>/dev/null || sudo dnf -y install vim
+	hash git 2>/dev/null || sudo dnf -y install git
+	hash ack 2>/dev/null || sudo dnf -y install ack
+	hash htop 2>/dev/null || sudo dnf -y install htop
+	hash xsel 2>/dev/null || sudo dnf -y install xsel
+	hash http 2>/dev/null || sudo dnf -y install httpie
+	hash terminator 2>/dev/null || sudo dnf -y install terminator
 
 prepare:
 	mkdir -p ~/.vim/colors
