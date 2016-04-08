@@ -1,7 +1,7 @@
 # New install
 
 ```bash
-make 
+make init
 ```
 
 # Pull and sync
