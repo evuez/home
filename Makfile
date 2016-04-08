@@ -1,4 +1,5 @@
-all: init sync
+sync:
+	./sync.sh
 
 install:
 	hash vim 2>/dev/null || sudo dnf install vim
@@ -6,6 +7,7 @@ install:
 	hash ack 2>/dev/null || sudo dnf install ack
 	hash htop 2>/dev/null || sudo dnf install htop
 	hash xsel 2>/dev/null || sudo dnf install xsel
+	hash httpie 2>/dev/null || sudo dnf install httpie
 	hash terminator 2>/dev/null || sudo dnf install terminator
 
 prepare:
@@ -17,8 +19,5 @@ prepare:
 	vim +PluginInstall +qall
 
 init: install prepare
-
-sync:
-	./sync.sh
 
 .PHONY: install prepare init sync
