@@ -1,4 +1,5 @@
 sync:
+	git pull --rebase origin master
 	./sync.sh
 
 install:
