@@ -1,6 +1,6 @@
 sync:
 	git pull --rebase origin master
-	git submodule foreach git pull --rebase
+	git submodule foreach git pull --rebase origin master
 	./sync.sh
 	vim +PluginInstall +qall
 
@@ -19,7 +19,7 @@ prepare:
 	mkdir -p ~/.config/terminator
 	mkdir -p ~/bin
 	mkdir -p ~/.config/sublime-text-3/Packages/User
-	git submodule add https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
+	git submodule update --init --recursive
 
 init: install prepare
 
