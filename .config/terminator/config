@@ -1,4 +1,6 @@
 [global_config]
+  handle_size = 0
+  inactive_color_offset = 0.69
   suppress_multiple_term_dialog = True
 [keybindings]
 [layouts]
@@ -14,7 +16,7 @@
   [[default]]
     background_darkness = 0.98
     background_image = None
-    background_type = transparent
     cursor_blink = False
     scrollbar_position = hidden
     show_titlebar = False
+    visible_bell = True
