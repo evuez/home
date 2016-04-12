@@ -10,9 +10,6 @@ files=(
   .inputrc
   .bashrc
   .ackrc
-  .config/sublime-text-3/Packages/User/Preferences.sublime-settings
-  .config/sublime-text-3/Packages/User/Python.sublime-settings
-  .config/sublime-text-3/Packages/User/Ruby.sublime-settings
   .config/terminator/config
   bin/subl-update.sh
   bin/lamp

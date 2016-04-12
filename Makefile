@@ -18,7 +18,6 @@ prepare:
 	mkdir -p ~/.vim/bundle
 	mkdir -p ~/.config/terminator
 	mkdir -p ~/bin
-	mkdir -p ~/.config/sublime-text-3/Packages/User
 	git submodule update --init --recursive
 
 init: install prepare
