@@ -7,4 +7,12 @@
     ff = no
     tool = vimdiff
 [alias]
-    praise = "!f() { git blame -c $@ | awk '{printf \"\\033[96m%s \\033[97m\\033[100m%s\\033[0m \\033[90m%s \\033[0m%s\\n\", $1, $3, $4, substr($0, index($0,$7))}' | less -R -S; }; f"
+    praise = "!f() { git blame -c $@ | awk '{printf \"\\033[96m%s \\033[97m\\033[100m%s\\033[0m \\033[0m%s\\n\", $1, $3, substr($0, index($0,$7))}' | less -R -S; }; f"
+    praise-verbose = "!f() { \
+        git blame --line-porcelain $@ | awk ' \
+        /^([0-9a-f]{39,40})\\s.*/{hash=substr($0, 0, 8)}; \
+        /^author (.+)/{author=$2}; \
+        /^author-time (.+)/{time=strftime(\"%d-%m-%Y\", $2)}; \
+        /^summary (.+)/{summary=substr($0, 9)}; \
+        /^\\t(.*)/{printf \"\\033[38;5;245m%s\\n\\033[96m%s \\033[97m\\033[100m%s\\033[0m \\033[38;5;138m%s \\033[97m%s\\n\", summary, hash, author, time, $0}' | less -R -S; \
+    }; f"
