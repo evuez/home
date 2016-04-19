@@ -6,3 +6,5 @@
 [merge]
     ff = no
     tool = vimdiff
+[alias]
+    praise = "!f() { git blame -c $@ | awk '{printf \"\\033[96m%s \\033[97m\\033[100m%s\\033[0m \\033[90m%s \\033[0m%s\\n\", $1, $3, $4, substr($0, index($0,$7))}' | less -R -S; }; f"
