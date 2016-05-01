@@ -16,7 +16,6 @@ files=(
   bin/mongodb
   bin/redis
   bin/pgsql
-  bin/sideq
 )
 
 echo -n "Creating backup directory at $bak... "
