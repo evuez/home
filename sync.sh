@@ -10,6 +10,7 @@ files=(
   .inputrc
   .bashrc
   .ackrc
+  .tmux.conf
   .config/terminator/config
   bin/subl-update.sh
   bin/lamp

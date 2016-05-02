@@ -11,6 +11,9 @@ fi
 # User specific aliases and functions
 # export PS1="[\u@\h \W]\$ "
 
+# Aliases
+alias psql-cli='psql -p 5432 -h localhost -d postgres'
+
 # Get and display git branch
 parse_git_branch() {
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
