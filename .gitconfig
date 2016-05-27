@@ -1,6 +1,7 @@
 [user]
     email = helloevuez@gmail.com
     name = evuez
+    signingkey = 58EB4C15
 [core]
     editor = vim
 [merge]
