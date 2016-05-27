@@ -30,6 +30,7 @@ filetype plugin indent on
 
 " Show line numbers
 set number
+set relativenumber
 
 " Force wrap at col 72 for Git commit bodies
 au FileType gitcommit set tw=72
