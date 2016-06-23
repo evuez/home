@@ -13,6 +13,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
+Plugin 'elixir-lang/vim-elixir'
 call vundle#end()
 
 
