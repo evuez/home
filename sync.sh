@@ -13,10 +13,7 @@ files=(
   .tmux.conf
   .config/terminator/config
   bin/subl-update.sh
-  bin/lamp
-  bin/mongodb
-  bin/redis
-  bin/pgsql
+  bin/docker-cleanup
 )
 
 echo -n "Creating backup directory at $bak... "
