@@ -17,3 +17,4 @@
         /^summary (.+)/{summary=substr($0, 9)}; \
         /^\\t(.*)/{printf \"\\033[38;5;245m%s\\n\\033[96m%s \\033[97m\\033[100m%s\\033[0m \\033[38;5;138m%s \\033[97m%s\\n\", summary, hash, author, time, $0}' | less -R -S -X; \
     }; f"
+    lg = log --pretty=format:\"%C(yellow)%h%Creset %C(cyan)%s%Creset %C(dim white)(%ar)%Creset\" --graph
