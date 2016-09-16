@@ -47,8 +47,13 @@ au FileType ruby set shiftwidth=2
 " Set syntax as Markdown for *.md files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Auto wrap in markdown files
+" Auto wrap in markdown and LaTeX files
 au FileType markdown set wrap
+au FileType tex set wrap
+
+" Set light color scheme for LaTeX files
+au FileType tex colorscheme pencil
+au FileType tex set background=light
 
 " Leave hidden buffer open
 set hidden

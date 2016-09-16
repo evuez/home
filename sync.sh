@@ -6,6 +6,7 @@ files=(
   .gitconfig
   .vimrc
   .vim/colors/Tomorrow-Night-Bright.vim
+  .vim/colors/pencil.vim
   .vim/bundle/Vundle.vim
   .inputrc
   .bashrc
