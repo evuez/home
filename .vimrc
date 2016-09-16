@@ -68,6 +68,9 @@ set expandtab
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
+" Highlight current column
+set cursorcolumn
+
 " Enable incremental search
 set incsearch
 
