@@ -109,7 +109,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 """ CtrlP settings
 " Ignore commonly ignored directory and files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps|tmp)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
