@@ -53,7 +53,6 @@ au FileType tex set wrap
 
 " Set light color scheme for LaTeX files
 au FileType tex colorscheme pencil
-au FileType tex set background=light
 
 " Leave hidden buffer open
 set hidden
