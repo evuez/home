@@ -40,9 +40,11 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " Set color column for Python
 au FileType python set colorcolumn=80
 
-" Set indentation options for Ruby
+" Set indentation options for Ruby and Elixir
 au FileType ruby set tabstop=2
 au FileType ruby set shiftwidth=2
+au FileType elixir set tabstop=2
+au FileType elixir set shiftwidth=2
 
 " Set syntax as Markdown for *.md files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
