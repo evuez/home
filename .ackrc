@@ -3,3 +3,5 @@
 --ignore-dir=log/
 --ignore-dir=vendor/
 --ignore-dir=coverage/
+--ignore-dir=node_modules/
+--ignore-file=is:tags
