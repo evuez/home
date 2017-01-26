@@ -14,7 +14,18 @@ FILES=(
   .ackrc
   .tmux.conf
   .config/terminator/config
-  bin/subl-update.sh
+  .weechat/weechat.conf
+  .weechat/alias.conf
+  .weechat/aspell.conf
+  .weechat/buffers.conf
+  .weechat/charset.conf
+  .weechat/exec.conf
+  .weechat/logger.conf
+  .weechat/plugins.conf
+  .weechat/script.conf
+  .weechat/trigger.conf
+  .weechat/relay.conf
+  .weechat/xfer.conf
   bin/docker-cleanup
 )
 
