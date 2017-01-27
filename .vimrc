@@ -107,6 +107,9 @@ set guicursor=a:blinkon0
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Save swap files in a common directory
+set directory^=$HOME/.vim/swap//
+
 """ CtrlP settings
 " Ignore commonly ignored directory and files
 let g:ctrlp_custom_ignore = {
