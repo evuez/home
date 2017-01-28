@@ -8,7 +8,7 @@ FILES=(
   .vim/bundle/Vundle.vim
   .vim/colors/Tomorrow-Night-Bright.vim
   .vim/colors/pencil.vim
-  .vim/spell/
+  .vim/spell
   .inputrc
   .bashrc
   .ackrc
