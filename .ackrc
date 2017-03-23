@@ -4,4 +4,6 @@
 --ignore-dir=vendor/
 --ignore-dir=coverage/
 --ignore-dir=node_modules/
+--ignore-dir=deps/
+--ignore-dir=_build/
 --ignore-file=is:tags
