@@ -14,6 +14,7 @@ install:
 		httpie \
 		terminator \
 		tmux \
+		fish \
 		docker docker-compose
 
 prepare:
