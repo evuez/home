@@ -13,8 +13,7 @@ FILES=(
   .bashrc
   .ackrc
   .tmux.conf
-  .config/fish/functions/fish_prompt.fish
-  .config/fish/functions/fish_greeting.fish
+  .config/fish/functions
   .config/terminator/config
   .weechat/weechat.conf
   .weechat/alias.conf
