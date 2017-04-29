@@ -14,6 +14,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'cespare/vim-toml'
 call vundle#end()
 
 
@@ -32,6 +33,9 @@ filetype plugin indent on
 " Show line numbers
 set number
 set relativenumber
+
+" Disable mouse click
+set mouse-=a
 
 " Force wrap at col 72 for Git commit bodies
 au FileType gitcommit set tw=72
