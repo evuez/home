@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'cespare/vim-toml'
+Plugin 'neovimhaskell/haskell-vim'
 call vundle#end()
 
 
@@ -45,11 +46,13 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 au FileType python set colorcolumn=80
 au FileType elixir set colorcolumn=90
 
-" Set indentation options for Ruby, Elixir and YAML
+" Set indentation options for Ruby, Elixir, Haskell and YAML
 au FileType ruby set tabstop=2
 au FileType ruby set shiftwidth=2
 au FileType elixir set tabstop=2
-au FileType elixir set shiftwidth=2
+au FileType elixir set tabstop=2
+au FileType haskell set shiftwidth=2
+au FileType haskell set shiftwidth=2
 au FileType yaml set tabstop=2
 au FileType yaml set shiftwidth=2
 
@@ -120,7 +123,7 @@ set directory^=$HOME/.vim/swap//
 """ CtrlP settings
 " Ignore commonly ignored directory and files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps|tmp|coverage|node_modules)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps|priv\/static|tmp|coverage|node_modules)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
