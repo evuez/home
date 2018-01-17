@@ -15,6 +15,7 @@ FILES=(
   .tmux.conf
   .config/fish/functions
   .config/fish/config.fish
+  .config/fish/fishd.osiris.home
   .config/terminator/config
   .weechat/weechat.conf
   .weechat/alias.conf

@@ -8,13 +8,14 @@ install:
 	sudo dnf -y install \
 		vim \
 		git \
-		ack \
+		ripgrep \
 		htop \
 		xsel \
 		httpie \
 		terminator \
 		tmux \
 		fish \
+		fzf \
 		docker docker-compose
 
 prepare:

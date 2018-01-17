@@ -5,8 +5,11 @@ filetype off
 let mapleader=','
 let maplocalleader=','
 
-" Set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and fzf
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/bin/fzf
+
+" List plugins
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -16,6 +19,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'cespare/vim-toml'
 Plugin 'neovimhaskell/haskell-vim'
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
 
@@ -131,7 +135,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'r'
 
 " Use a leader instead of the actual named binding
-nmap <leader>p :CtrlP<cr>
+nmap <leader>p :Files<cr>
 
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
