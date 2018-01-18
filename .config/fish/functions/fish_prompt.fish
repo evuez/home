@@ -23,8 +23,8 @@ function fish_prompt --description 'Write out the prompt'
 
     switch $USER
     case root
-        printf '%s%s@%s %s%s%s# ' (set_color 555) $USER $__fish_prompt_hostname (set_color normal)(set_color white) (prompt_pwd) $__git_cb
+        printf ' %s%s%s# ' (set_color white) (prompt_pwd) $__git_cb
     case '*'
-        printf '%s%s@%s %s%s%s$ ' (set_color 556) $USER $__fish_prompt_hostname (set_color normal)(set_color white) (prompt_pwd) $__git_cb
+        printf ' %s%s%s$ ' (set_color white) (prompt_pwd) $__git_cb
     end
 end
