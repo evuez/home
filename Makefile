@@ -1,8 +1,8 @@
 sync:
 	git pull --rebase origin master
-	git submodule foreach git pull --rebase origin master
 	./sync.sh
-	vim +PluginInstall +qall
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	vim +PlugInstall +qall
 
 install:
 	sudo dnf -y install \
@@ -20,10 +20,8 @@ install:
 
 prepare:
 	mkdir -p ~/.vim/colors
-	mkdir -p ~/.vim/bundle
 	mkdir -p ~/.config/terminator
 	mkdir -p ~/bin
-	git submodule update --init --recursive
 
 init: install prepare
 

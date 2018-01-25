@@ -5,7 +5,6 @@ BAK_DIR=~/Sync/bak
 FILES=(
   .gitconfig
   .vimrc
-  .vim/bundle/Vundle.vim
   .vim/colors/Tomorrow-Night-Bright.vim
   .vim/colors/pencil.vim
   .vim/spell

@@ -5,22 +5,19 @@ filetype off
 let mapleader=','
 let maplocalleader=','
 
-" Set the runtime path to include Vundle and fzf
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=/usr/bin/fzf
-
 " List plugins
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'rust-lang/rust.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'cespare/vim-toml'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'junegunn/fzf.vim'
-call vundle#end()
+call plug#begin('~/.vim/bundle')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
+Plug 'posva/vim-vue', {'for': 'vue'}
+call plug#end()
 
 
 " Set default colorscheme
