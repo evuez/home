@@ -16,6 +16,7 @@ FILES=(
   .config/fish/config.fish
   .config/fish/fishd.osiris.home
   .config/fish/fishd.aura
+  .config/alacritty/alacritty.yml
   .config/terminator/config
   .weechat/weechat.conf
   .weechat/alias.conf
