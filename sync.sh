@@ -10,6 +10,7 @@ FILES=(
   .vim/spell
   .inputrc
   .bashrc
+  .bash_profile
   .ackrc
   .tmux.conf
   .config/fish/functions

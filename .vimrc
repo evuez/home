@@ -81,6 +81,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Set background color
+hi Normal ctermbg=NONE guibg=NONE
+
 " Highlight current line
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
