@@ -17,11 +17,11 @@ Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'dracula/vim', {'as': 'dracula'}
 call plug#end()
 
-
-" Set default colorscheme
-colorscheme Tomorrow-Night-Bright
+" Set default color scheme
+colorscheme dracula
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
