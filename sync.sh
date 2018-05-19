@@ -18,7 +18,6 @@ FILES=(
   .config/fish/fishd.osiris.home
   .config/fish/fishd.aura
   .config/alacritty/alacritty.yml
-  .config/terminator/config
   .weechat/weechat.conf
   .weechat/alias.conf
   .weechat/aspell.conf
@@ -31,7 +30,6 @@ FILES=(
   .weechat/trigger.conf
   .weechat/relay.conf
   .weechat/xfer.conf
-  bin/docker-cleanup
 )
 
 echo -n "Creating backup directory at $BAK_DIR... "

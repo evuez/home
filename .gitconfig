@@ -22,3 +22,9 @@
     m3 = mergetool -t merge3
 [mergetool "merge3"]
 	cmd = vim -d -c \"wincmd l\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+[interactive]
+    diffFilter = "diff-highlight"

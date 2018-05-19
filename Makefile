@@ -7,12 +7,13 @@ sync:
 install:
 	sudo dnf -y install \
 		vim \
+		neovim \
 		git \
 		ripgrep \
 		htop \
 		xsel \
 		httpie \
-		terminator \
+		nethogs \
 		tmux \
 		fish \
 		fzf \
@@ -20,8 +21,6 @@ install:
 
 prepare:
 	mkdir -p ~/.vim/colors
-	mkdir -p ~/.config/terminator
-	mkdir -p ~/bin
 
 init: install prepare
 
