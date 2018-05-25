@@ -13,6 +13,7 @@ FILES=(
   .bash_profile
   .ackrc
   .tmux.conf
+  .local/bin/switch-audio
   .config/fish/functions
   .config/fish/config.fish
   .config/fish/fishd.osiris.home
