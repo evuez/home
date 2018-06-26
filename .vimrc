@@ -142,5 +142,9 @@ nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
+" Copy current's file path
+nmap <leader>cp :let @+ = expand("%")<cr>
+nmap <leader>cl :let @+ = expand("%") . ":" . (line(".") + 1)<cr>
+
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
