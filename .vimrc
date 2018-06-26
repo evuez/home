@@ -39,34 +39,6 @@ set relativenumber
 " Disable mouse click
 set mouse-=a
 
-" Force wrap at col 72 for Git commit bodies
-au FileType gitcommit set tw=72
-au FileType gitcommit call setpos('.', [0, 1, 1, 0])
-
-" Set color column for Python and Elixir
-au FileType python set colorcolumn=80
-au FileType elixir set colorcolumn=90
-
-" Set indentation options for Ruby, Elixir, Haskell and YAML
-au FileType ruby set tabstop=2
-au FileType ruby set shiftwidth=2
-au FileType elixir set tabstop=2
-au FileType elixir set tabstop=2
-au FileType haskell set shiftwidth=2
-au FileType haskell set shiftwidth=2
-au FileType yaml set tabstop=2
-au FileType yaml set shiftwidth=2
-
-" Set syntax as Markdown for *.md files
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Auto wrap in markdown and LaTeX files
-au FileType markdown set wrap
-au FileType tex set wrap
-
-" Set light color scheme for LaTeX files
-au FileType tex colorscheme pencil
-
 " Leave hidden buffer open
 set hidden
 
@@ -77,8 +49,8 @@ set autoread
 set history=100
 
 " Indentation options
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Set background color
@@ -119,10 +91,40 @@ set autoread
 set guicursor=a:blinkon0
 
 " Remove trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e
 
 " Save swap files in a common directory
 set directory^=$HOME/.vim/swap//
+
+"""
+""" Filetype specific settings
+"""
+
+" Force wrap at col 72 for Git commit bodies
+au FileType gitcommit set tw=72
+au FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+" Set color column for Python and Elixir
+au FileType python set colorcolumn=80
+au FileType elixir set colorcolumn=90
+
+" Set indentation options for Python
+au FileType python set tabstop=4
+au FileType python set shiftwidth=4
+
+" Set syntax as Markdown for *.md files
+au BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Auto wrap in markdown and LaTeX files
+au FileType markdown set wrap
+au FileType tex set wrap
+
+" Set light color scheme for LaTeX files
+au FileType tex colorscheme pencil
+
+"""
+""" Plugin settings
+"""
 
 """ CtrlP settings
 " Ignore commonly ignored directory and files
@@ -138,9 +140,15 @@ let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :Files<cr>
 
 " Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+
+"""
+""" Bindings
+"""
+
+" Search through open buffers
+nmap <leader>bb :Buffers<cr>
 
 " Copy current's file path
 nmap <leader>cp :let @+ = expand("%")<cr>
