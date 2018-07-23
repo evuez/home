@@ -17,6 +17,7 @@ install:
 		tmux \
 		fish \
 		fzf \
+		tldr \
 		docker docker-compose
 
 prepare:
