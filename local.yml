@@ -1,0 +1,168 @@
+- hosts: localhost
+  become: true
+  vars:
+    - source_directory: ~/sync/
+    - backup_directory: ~/sync/backup
+
+  tasks:
+    - name: Install packages
+      dnf: name={{item}}
+      loop:
+        - firefox
+        - git
+        - htop
+        - neovim
+        - vim
+        - docker
+        - docker-compose
+        - ripgrep
+        - nethogs
+        - httpie
+        - tmux
+        - fish
+        - fzf
+        - tldr
+        - xsel
+
+    - name: Install vim-plug
+      shell: 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+    - name: Install vim plugins
+      shell: 'vim +"PlugInstall --sync" +qa'
+
+    - name: Lowercase user directories
+      shell: mv ~/"{{item.src}}" ~/"{{item.dest}}"
+      loop:
+        - {src: 'Desktop', dest: 'desktop'}
+        - {src: 'Documents', dest: 'documents'}
+        - {src: 'Downloads', dest: 'downloads'}
+        - {src: 'Music', dest: 'music'}
+        - {src: 'Pictures', dest: 'pictures'}
+        - {src: 'Public', dest: 'public'}
+        - {src: 'Templates', dest: 'templates'}
+        - {src: 'Videos', dest: 'videos'}
+
+    - name: Update user directories configuration
+      shell: xdg-user-dirs-update --set "{{item.name}}" ~/"{{item.path}}"
+      loop:
+        - {name: 'DESKTOP', path: 'desktop'}
+        - {name: 'DOCUMENTS', path: 'documents'}
+        - {name: 'DOWNLOAD', path: 'downloads'}
+        - {name: 'MUSIC', path: 'music'}
+        - {name: 'PICTURES', path: 'pictures'}
+        - {name: 'PUBLICSHARE', path: 'public'}
+        - {name: 'TEMPLATES', path: 'templates'}
+        - {name: 'VIDEOS', path: 'videos'}
+
+    - name: Create backup directory
+      file:
+        path: "{{backup_directory}}"
+        state: directory
+
+    - name: Link configuration files
+      shell: |
+        cp -r --parents -L ~/{{item}} {{backup_directory}}
+        rm -r ~/{{item}}
+        if [[ -d {{item}} ]]; then
+          ln -s {{source_directory}}/{{item}} ~/$(dirname {{item}})
+        else
+          ln -s {{source_directory}}/{{item}} ~/{{item}}
+        fi
+      loop:
+        - .gitconfig
+        - .vimrc
+        - .vim/spell
+        - .inputrc
+        - .bash_profile
+        - .tmux.conf
+        - .local/bin/switch-audio
+        - .config/ripgrep/config
+        - .config/fish/functions
+        - .config/fish/config.fish
+        - .config/fish/fishd.osiris.home
+        - .config/fish/fishd.aura
+        - .config/alacritty/alacritty.yml
+
+    - name: Update GNOME settings
+      dconf:
+        key: "{{item.key}}"
+        value: "{{item.value}}"
+      loop:
+        - {key: '/org/gnome/desktop/interface/clock-show-date', value: 'true'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name', value: 'Terminal'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding', value: '<Super>t'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: 'alacritty'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name', value: 'Web Browser'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding', value: 'HomePage'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command', value: 'firefox -P -no-remote'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings', value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/www', value: '<Super>www'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/home', value: '<Super>f'}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/email', value: ''}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/search', value: ''}
+
+    - name: Remove GNOME bloat
+      dnf:
+        name:
+          - cheese
+          - evolution
+          - evolution-ews
+          - evolution-help
+          - gfbgraph
+          - gnome-boxes
+          - gnome-calendar
+          - gnome-contacts
+          - gnome-dictionary
+          - gnome-documents
+          - gnome-getting-started-docs
+          - gnome-initial-setup
+          - gnome-maps
+          - gnome-online-miners
+          - gnome-photos
+          - gnome-software
+          - gnome-user-docs
+          - gnome-user-share
+          - gnome-video-effects
+          - gnome-weather
+          - simple-scan
+          - totem
+          - tracker-miners
+          - yelp
+        state: absent
+
+    - name: Install core GNOME packages
+      dnf:
+        name:
+          - eog
+          - evince
+          - evolution-data-server
+          - flatpak
+          - gdm
+          - gnome-keyring
+          - gnome-menus
+          - gnome-screenshot
+          - gnome-shell
+          - gnome-terminal
+          - gnome-tweaks
+          - nautilus
+          - redhat-menus
+        state: present
+
+    - name: Mask unwanted GNOME services
+      systemd:
+        name: "{{item}}"
+        user: yes
+        masked: yes
+        state: stopped
+      loop:
+        - evolution-addressbook-factory.service
+        - evolution-calendar-factory.service
+        - evolution-source-registry.service
+        - gvfs-goa-volume-monitor.service
+        - tracker-store.service
+
+    - name: Remove tracker databases
+      file:
+        name: ~/.cache/tracker
+        state: absent
+

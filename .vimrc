@@ -16,8 +16,8 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 call plug#end()
 
 " Set default color scheme

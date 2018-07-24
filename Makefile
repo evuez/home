@@ -1,28 +1,5 @@
+.PHONY: sync
 sync:
 	git pull --rebase origin master
-	./sync.sh
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	nvim +PlugInstall +qall
-
-install:
-	sudo dnf -y install \
-		vim \
-		neovim \
-		git \
-		ripgrep \
-		htop \
-		xsel \
-		httpie \
-		nethogs \
-		tmux \
-		fish \
-		fzf \
-		tldr \
-		docker docker-compose
-
-prepare:
-	mkdir -p ~/.vim/colors
-
-init: install prepare
-
-.PHONY: install prepare init sync
+	which ansible || sudo dnf install --assumeyes ansible python2-dnf
+	ansible-playbook local.yml --extra-vars "ansible_become_pass=$(PWD)"
