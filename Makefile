@@ -2,7 +2,7 @@ sync:
 	git pull --rebase origin master
 	./sync.sh
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	vim +PlugInstall +qall
+	nvim +PlugInstall +qall
 
 install:
 	sudo dnf -y install \

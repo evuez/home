@@ -13,7 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
+Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'posva/vim-vue', {'for': 'vue'}
@@ -126,7 +126,7 @@ au FileType tex colorscheme pencil
 """ Plugin settings
 """
 
-""" CtrlP settings
+""" CtrlP
 " Ignore commonly ignored directory and files
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps|priv\/static|tmp|coverage|node_modules)$',
