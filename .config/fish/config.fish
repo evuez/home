@@ -9,3 +9,5 @@ function fish_user_key_bindings
 end
 
 set BC_ENV_ARGS "$HOME/.bc"
+
+set PATH "$HOME/.cargo/bin" $PATH
