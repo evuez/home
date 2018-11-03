@@ -21,7 +21,7 @@ Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 call plug#end()
 
 " Set default color scheme
-colorscheme dracula
+silent! colorscheme dracula
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
