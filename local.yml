@@ -26,6 +26,12 @@
         - tldr
         - xsel
 
+    - name: Install asdf
+      git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: "{{home}}/.asdf"
+        version: v0.6.0
+
     - name: Install diff-highlight
       file:
         src: /usr/share/git-core/contrib/diff-highlight
