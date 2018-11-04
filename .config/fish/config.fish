@@ -1,4 +1,11 @@
 set -gx TERM xterm-256color
+
+set -x BC_ENV_ARGS "$HOME/.bc"
+set -x FZF_DEFAULT_COMMAND "rg --files --hidden --smart-case --glob !.git/"
+set PATH "$HOME/.cargo/bin" $PATH
+
+# Vim bindings
+
 function fish_vi_cursor; end
 fish_vi_key_bindings
 
@@ -7,11 +14,6 @@ function fish_user_key_bindings
   bind Y fish_clipboard_copy
   bind p fish_clipboard_paste
 end
-
-set BC_ENV_ARGS "$HOME/.bc"
-
-set PATH "$HOME/.cargo/bin" $PATH
-source ~/.asdf/asdf.fish
 
 # Dracula theme
 
@@ -44,3 +46,7 @@ set fish_color_search_match \x2d\x2dbackground\x3d$PURPLE
 set fish_color_selection \x2d\x2dbackground\x3d$PURPLE
 set fish_color_user $PURPLE
 set fish_color_valid_path \x2d\x2dunderline
+
+# Misc
+
+source ~/.asdf/asdf.fish

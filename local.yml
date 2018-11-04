@@ -136,12 +136,12 @@
         - {key: '/org/gnome/desktop/interface/clock-show-date', value: 'true'}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name', value: "'Terminal'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding', value: "'<Super>t'"}
-        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: "'alacritty'"}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: "'env WAYLAND_DISPLAY= alacritty'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name', value: "'Web Browser'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding', value: "'HomePage'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command', value: "'firefox -P -no-remote'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings', value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"}
-        - {key: '/org/gnome/settings-daemon/plugins/media-keys/www', value: "'<Super>www'"}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/www', value: "'<Super>w'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/home', value: "'<Super>f'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/email', value: "''"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/search', value: "''"}
