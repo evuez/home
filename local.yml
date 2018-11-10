@@ -25,6 +25,7 @@
         - fzf
         - tldr
         - xsel
+        - jq
 
     - name: Install asdf
       git:
@@ -127,6 +128,7 @@
         - .config/fish/fishd.osiris.home
         - .config/fish/fishd.aura
         - .config/alacritty/alacritty.yml
+        - .config/nvim/init.vim
 
     - name: Update GNOME settings
       dconf:

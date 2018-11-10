@@ -20,6 +20,9 @@ Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 call plug#end()
 
+" Use true colors
+set termguicolors
+
 " Set default color scheme
 silent! colorscheme dracula
 
@@ -58,7 +61,7 @@ hi Normal ctermbg=NONE guibg=NONE
 
 " Highlight current line
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine term=bold cterm=bold
 
 " Highlight current column
 set cursorcolumn
@@ -104,9 +107,8 @@ set directory^=$HOME/.vim/swap//
 au FileType gitcommit set tw=72
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
-" Set color column for Python and Elixir
+" Set color column for Python
 au FileType python set colorcolumn=80
-au FileType elixir set colorcolumn=90
 
 " Set indentation options for Python
 au FileType python set tabstop=4
