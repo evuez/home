@@ -26,6 +26,7 @@
         - tldr
         - xsel
         - jq
+        - dnf-automatic
 
     - name: Install asdf
       git:
@@ -148,6 +149,12 @@
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/email', value: "''"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/search', value: "''"}
 
+    - name: Enable DNF automatic
+      systemd:
+        name: dnf-automatic.timer
+        enabled: yes
+        state: started
+
     - name: Remove GNOME bloat
       become: true
       dnf:
@@ -167,7 +174,7 @@
           - gnome-maps
           - gnome-online-miners
           - gnome-photos
-            #- gnome-software
+          - gnome-software
           - gnome-user-docs
           - gnome-user-share
           - gnome-video-effects
@@ -176,6 +183,7 @@
           - totem
           - tracker-miners
           - yelp
+          - PackageKit-command-not-found
         state: absent
 
     - name: Install core GNOME packages
@@ -198,7 +206,6 @@
         state: present
 
     - name: Mask unwanted GNOME services
-      #become: true
       systemd:
         name: "{{item}}"
         scope: user

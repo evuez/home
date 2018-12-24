@@ -18,6 +18,8 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
+Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
+Plug 'ElmCast/elm-vim', {'for': 'elm'}
 call plug#end()
 
 " Use true colors
@@ -98,6 +100,12 @@ au BufWritePre * :%s/\s\+$//e
 
 " Save swap files in a common directory
 set directory^=$HOME/.vim/swap//
+
+" Completion options
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 """
 """ Filetype specific settings
