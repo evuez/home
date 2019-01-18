@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+STATS="/tmp/router-stats.xml"
+
+curl --silent -X GET http://192.168.8.1/api/monitoring/month_statistics > $STATS
+
+CURRENT_MONTH_DOWNLOAD=$(xmllint --xpath "/response/CurrentMonthDownload/text()" $STATS)
+MONTH_DURATION=$(xmllint --xpath "/response/MonthDuration/text()" $STATS)
+SINCE=$(xmllint --xpath "/response/MonthLastClearTime/text()" $STATS)
+
+echo "$(($CURRENT_MONTH_DOWNLOAD / (1024 ** 3))) Go downloaded since $SINCE ($(($MONTH_DURATION / 86400)) days)"
