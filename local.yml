@@ -123,6 +123,8 @@
         - .bash_profile
         - .tmux.conf
         - .local/bin/switch-audio
+        - .local/bin/router-stats
+        - .local/bin/rgs
         - .config/ripgrep/config
         - .config/fish/functions
         - .config/fish/config.fish
