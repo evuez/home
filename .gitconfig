@@ -29,3 +29,5 @@
     show = diff-highlight | less
 [interactive]
     diffFilter = "diff-highlight"
+[credential]
+	helper = store

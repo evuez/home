@@ -7,7 +7,6 @@ let maplocalleader=','
 
 " List plugins
 call plug#begin('~/.vim/bundle')
-Plug 'ctrlpvim/ctrlp.vim'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
@@ -20,6 +19,7 @@ Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
+Plug 'hellerve/carp-vim', {'for': 'carp'}
 call plug#end()
 
 " Use true colors
@@ -76,6 +76,10 @@ set ignorecase
 
 " Make searches case sensitive if search starts with a capital
 set smartcase
+
+" Make * and # case sensitive
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
 
 " Show info along bottom
 set ruler
@@ -136,33 +140,26 @@ au FileType tex colorscheme pencil
 """ Plugin settings
 """
 
-""" CtrlP
-" Ignore commonly ignored directory and files
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|_build|env|deps|priv\/static|tmp|coverage|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-
-" Set cwd at the level of the nearest .git directory
-let g:ctrlp_working_path_mode = 'r'
-
+""" FZF
 " Use a leader instead of the actual named binding
 nmap <leader>p :Files<cr>
 
-" Easy bindings for its various modes
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+" Search through open buffers
+nmap <leader>bb :Buffers<cr>
+
+" Search through files history
+nmap <leader>bs :History<cr>
+
+" Search through tags
+nmap <leader>t :Tags<cr>
 
 """
 """ Bindings
 """
 
-" Search through open buffers
-nmap <leader>bb :Buffers<cr>
-
 " Copy current's file path
 nmap <leader>cp :let @+ = expand("%")<cr>
-nmap <leader>cl :let @+ = expand("%") . ":" . (line(".") + 1)<cr>
+nmap <leader>cl :let @+ = expand("%") . ":" . line(".")<cr>
 
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
