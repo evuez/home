@@ -78,8 +78,11 @@ set ignorecase
 set smartcase
 
 " Make * and # case sensitive
-nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
-nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\>\C<CR>
+nnoremap # ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>
+
+" Make Q repeat the last macro
+nnoremap Q @@
 
 " Show info along bottom
 set ruler
@@ -104,6 +107,11 @@ au BufWritePre * :%s/\s\+$//e
 
 " Save swap files in a common directory
 set directory^=$HOME/.vim/swap//
+
+if has('nvim')
+  " Show the effect of `:s//` incrementally
+  set inccommand=nosplit
+endif
 
 " Completion options
 set completeopt=longest,menuone
@@ -130,8 +138,8 @@ au FileType python set shiftwidth=4
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Auto wrap in markdown and LaTeX files
-au FileType markdown set wrap
-au FileType tex set wrap
+au FileType markdown set wrap linebreak
+au FileType tex set wrap linebreak
 
 " Set light color scheme for LaTeX files
 au FileType tex colorscheme pencil
@@ -151,7 +159,11 @@ nmap <leader>bb :Buffers<cr>
 nmap <leader>bs :History<cr>
 
 " Search through tags
-nmap <leader>t :Tags<cr>
+nmap <leader>tt :Tags<cr>
+nmap <leader>tw :Tags <C-R>=expand('<cword>')<cr><cr>
+
+" Search with ripgrep
+nmap <leader>r :Rg <C-R>=expand('<cword>')<cr><cr>
 
 """
 """ Bindings

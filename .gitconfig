@@ -3,7 +3,7 @@
     name = evuez
     signingkey = 58EB4C15
 [core]
-    editor = vim
+	editor = nvim
     excludesfile = ~/.gitignore.global
 [merge]
     ff = no
