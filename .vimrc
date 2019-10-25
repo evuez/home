@@ -20,6 +20,7 @@ Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
+Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts']}
 call plug#end()
 
 " Use true colors
@@ -153,10 +154,7 @@ au FileType tex colorscheme pencil
 nmap <leader>p :Files<cr>
 
 " Search through open buffers
-nmap <leader>bb :Buffers<cr>
-
-" Search through files history
-nmap <leader>bs :History<cr>
+nmap <leader>b :Buffers<cr>
 
 " Search through tags
 nmap <leader>tt :Tags<cr>

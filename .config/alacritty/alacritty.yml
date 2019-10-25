@@ -86,19 +86,19 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: Iosevka Term
+    family: Iosevka
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
   bold:
-    family: Iosevka Term
+    family: Iosevka
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Iosevka Term
+    family: Iosevka
     # The `style` can be specified to pick a specific face.
     style: Italic
 
@@ -125,7 +125,8 @@ font:
   # scale_with_dpi: true
 
 # Display the time it takes to redraw each frame.
-render_timer: false
+debug:
+  render_timer: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
