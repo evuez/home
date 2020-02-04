@@ -11,6 +11,7 @@ Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
 Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -20,7 +21,8 @@ Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
-Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts']}
+Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact', 'tsx']}
+Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
 call plug#end()
 
 " Use true colors
@@ -119,10 +121,15 @@ set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set complete+=kspell
 
 """
 """ Filetype specific settings
 """
+
+" Enable spellcheck for *.md and gitcommit
+au BufRead,BufNewFile *.md setlocal spell
+au FileType gitcommit setlocal spell
 
 " Force wrap at col 72 for Git commit bodies
 au FileType gitcommit set tw=72
@@ -162,6 +169,15 @@ nmap <leader>tw :Tags <C-R>=expand('<cword>')<cr><cr>
 
 " Search with ripgrep
 nmap <leader>r :Rg <C-R>=expand('<cword>')<cr><cr>
+
+""" GitMessenger
+nmap <leader>g :GitMessenger<cr>
+
+" Remove default `gm` mapping
+let g:git_messenger_no_default_mappings=v:true
+
+" Autofocus the popup
+let g:git_messenger_always_into_popup=v:true
 
 """
 """ Bindings

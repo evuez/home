@@ -141,7 +141,7 @@
         - {key: '/org/gnome/desktop/interface/clock-show-date', value: 'true'}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name', value: "'Terminal'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding', value: "'<Super>t'"}
-        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: "'env WAYLAND_DISPLAY= alacritty'"}
+        - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: "'alacritty'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name', value: "'Web Browser'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding', value: "'HomePage'"}
         - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command', value: "'firefox -P -no-remote'"}
@@ -225,3 +225,21 @@
         name: "{{home}}/.cache/tracker"
         state: absent
 
+    - name: Add echo cancelling input device
+      lineinfile:
+        path: /etc/pulse/default.pa
+        regexp: "^{{item}}$"
+        line: {{item}}
+      loop:
+        - '# echosource\n.nofail'
+        - 'load-module module-echo-cancel aec_method=webrtc source_name=echosource'
+        - 'set-default-source echosource'
+        - '# echosource\n.fail'
+
+    - name: Add throttle to DNF
+      lineinfile:
+        path: /etc/dnf/dnf.conf
+        regexp: "^{{item}}$"
+        line: {{item}}
+      loop:
+        - 'throttle=100k'
