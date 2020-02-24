@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-NEXT_SINK=$(pactl list short sinks | rg -v "hdmi|RUNNING" | cut -f2)
-CURRENT=$(pactl list short sink-inputs | cut -f1)
+NEXT_SINK=$(pactl list short sinks | rg -v "hdmi|RUNNING" | cut -f2 | head -n 1)
+CURRENT=$(pactl list short sink-inputs | rg -v "echo-cancel" | cut -f1 | head -n 1)
 
 pacmd set-default-sink "$NEXT_SINK"
 pacmd move-sink-input "$CURRENT" "$NEXT_SINK"
