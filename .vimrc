@@ -179,6 +179,10 @@ let g:git_messenger_no_default_mappings=v:true
 " Autofocus the popup
 let g:git_messenger_always_into_popup=v:true
 
+""" elm-vim
+" Disable bindings
+let g:elm_setup_keybindings=0
+
 """
 """ Bindings
 """

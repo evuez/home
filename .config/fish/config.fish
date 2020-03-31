@@ -1,6 +1,7 @@
 set -gx TERM xterm-256color
 
 set -x VISUAL nvim
+set -x EDITOR nvim
 set -x BC_ENV_ARGS "$HOME/.bc"
 set -x FZF_DEFAULT_COMMAND "rg --files --hidden --smart-case --glob !.git/"
 set PATH "$HOME/.cargo/bin" $PATH
