@@ -225,17 +225,6 @@
         name: "{{home}}/.cache/tracker"
         state: absent
 
-    - name: Add echo cancelling input device
-      lineinfile:
-        path: /etc/pulse/default.pa
-        regexp: "^{{item}}$"
-        line: {{item}}
-      loop:
-        - '# echosource\n.nofail'
-        - 'load-module module-echo-cancel aec_method=webrtc source_name=echosource'
-        - 'set-default-source echosource'
-        - '# echosource\n.fail'
-
     - name: Add throttle to DNF
       lineinfile:
         path: /etc/dnf/dnf.conf
