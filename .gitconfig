@@ -3,7 +3,7 @@
     name = evuez
     signingkey = 58EB4C15
 [core]
-	editor = nvim
+    editor = nvim
     excludesfile = ~/.gitignore.global
 [merge]
     ff = no
@@ -21,8 +21,10 @@
     slog = log --pretty=format:\"%C(yellow)%h%Creset %C(cyan)%s%Creset %C(dim white)(%an, %ar)%Creset\" --graph --left-right
     flog = "!f() { git log --pretty='%h %s' $@ | fzf --preview \"git show --stat (echo {} | awk '{print \\$1}')\" | awk '{print $1}' | xsel -b; }; f"
     m3 = mergetool -t merge3
+    wdiff = diff -w --word-diff=color
+    branches = for-each-ref --sort=-committerdate --format='%(color:yellow)%(authordate:relative) %(color:cyan)%(authorname) %(color:white)%(refname:short)' refs/remotes
 [mergetool "merge3"]
-	cmd = vim -d -c \"wincmd l\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = vim -d -c \"wincmd l\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [pager]
     diff = diff-highlight | less
     log = diff-highlight | less
@@ -30,4 +32,6 @@
 [interactive]
     diffFilter = "diff-highlight"
 [credential]
-	helper = store
+    helper = store
+[protocol]
+    version = 2

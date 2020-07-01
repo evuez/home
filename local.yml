@@ -9,7 +9,7 @@
       become: true
       dnf: name={{item}}
       loop:
-        - python3-psutil # For using `dconf` in Ansible
+        - python3-psutil # Allows using `dconf` in Ansible
         - firefox
         - git
         - htop
@@ -27,6 +27,7 @@
         - xsel
         - jq
         - dnf-automatic
+        - nnn
 
     - name: Install asdf
       git:

@@ -12,12 +12,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/git-messenger.vim'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'reedes/vim-colors-pencil', {'as': 'pencil', 'for': 'tex'}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
@@ -99,9 +98,6 @@ set autoindent
 " Do not wrap text
 set nowrap
 
-" Auto-reload files
-set autoread
-
 " Disable cursor blink
 set guicursor=a:blinkon0
 
@@ -149,14 +145,14 @@ au BufNewFile,BufReadPost *.md set filetype=markdown
 au FileType markdown set wrap linebreak
 au FileType tex set wrap linebreak
 
-" Set light color scheme for LaTeX files
-au FileType tex colorscheme pencil
-
 """
 """ Plugin settings
 """
 
 """ FZF
+" Hide preview window
+let g:fzf_preview_window = ''
+
 " Use a leader instead of the actual named binding
 nmap <leader>p :Files<cr>
 
@@ -187,7 +183,7 @@ let g:elm_setup_keybindings=0
 """ Bindings
 """
 
-" Copy current's file path
+" Copy current file path
 nmap <leader>cp :let @+ = expand("%")<cr>
 nmap <leader>cl :let @+ = expand("%") . ":" . line(".")<cr>
 
