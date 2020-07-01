@@ -28,6 +28,7 @@
         - jq
         - dnf-automatic
         - nnn
+        - entr
 
     - name: Install asdf
       git:
