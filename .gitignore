@@ -1,3 +1,4 @@
 backup
 .session.vim
 .vim/spell/
+.skiplist

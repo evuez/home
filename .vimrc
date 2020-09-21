@@ -7,21 +7,26 @@ let maplocalleader=','
 
 " List plugins
 call plug#begin('~/.vim/bundle')
+"" Fuzzy finder
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-surround'
-Plug 'rhysd/git-messenger.vim'
+"" Color scheme
 Plug 'dracula/vim', {'as': 'dracula'}
+"" Other plugins
+Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
+Plug 'tpope/vim-surround'
+"" Language plugins
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
 Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact', 'tsx']}
 Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 call plug#end()
 
 " Use true colors
@@ -59,9 +64,6 @@ set history=100
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
-" Set background color
-hi Normal ctermbg=NONE guibg=NONE
 
 " Highlight current line
 set cursorline
@@ -174,6 +176,24 @@ let g:git_messenger_no_default_mappings=v:true
 
 " Autofocus the popup
 let g:git_messenger_always_into_popup=v:true
+
+""" LanguageClient
+" Servers
+let g:LanguageClient_serverCommands = {}
+
+" Disable diagnostics
+let g:LanguageClient_useVirtualText='CodeLens'
+
+" Mappings
+nmap <F5> :call LanguageClient_contextMenu()<CR>
+nmap <leader>lk :call LanguageClient#textDocument_hover()<CR>
+nmap <leader>lg :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+nmap <leader>lb :call LanguageClient#textDocument_references()<CR>
+nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
+nmap <leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+nmap <leader>lw :call LanguageClient#workspace_symbol()<CR>
 
 """ elm-vim
 " Disable bindings
