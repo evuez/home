@@ -26,7 +26,6 @@ Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact', 'tsx']}
 Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 call plug#end()
 
 " Use true colors
@@ -176,24 +175,6 @@ let g:git_messenger_no_default_mappings=v:true
 
 " Autofocus the popup
 let g:git_messenger_always_into_popup=v:true
-
-""" LanguageClient
-" Servers
-let g:LanguageClient_serverCommands = {}
-
-" Disable diagnostics
-let g:LanguageClient_useVirtualText='CodeLens'
-
-" Mappings
-nmap <F5> :call LanguageClient_contextMenu()<CR>
-nmap <leader>lk :call LanguageClient#textDocument_hover()<CR>
-nmap <leader>lg :call LanguageClient#textDocument_definition()<CR>
-nmap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-nmap <leader>lb :call LanguageClient#textDocument_references()<CR>
-nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
-nmap <leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
-nmap <leader>lw :call LanguageClient#workspace_symbol()<CR>
 
 """ elm-vim
 " Disable bindings
