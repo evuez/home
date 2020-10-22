@@ -29,6 +29,7 @@
         - dnf-automatic
         - nnn
         - entr
+        - bat
 
     - name: Install asdf
       git:
