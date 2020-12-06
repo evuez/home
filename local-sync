@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+
 rsync -avz  --info=progress2,skip0 --stats --update --exclude-from 'sync/.skiplist' ./ $@
