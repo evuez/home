@@ -30,7 +30,6 @@
         - nnn
         - entr
         - bat
-        - xbindkeys
         - dmenu
         - sway
 
@@ -132,6 +131,7 @@
         - .config/nvim/init.vim
         - .config/ripgrep/config
         - .config/sway/config
+        - .config/sway/status
         - .ctags
         - .gitconfig
         - .inputrc
@@ -140,7 +140,6 @@
         - .local/bin/switch-audio
         - .tmux.conf
         - .vimrc
-        - .xbindkeysrc
 
     - name: Update GNOME settings
       dconf:
