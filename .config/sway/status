@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+local_date=$(date +'%Y-%m-%d %I:%M%p')
+est_date=$(TZ='America/New_York' date +'%Y-%m-%d %I:%M%p')
+
+echo "$est_date / $local_date"
