@@ -26,6 +26,7 @@ Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact', 'tsx']}
 Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
+Plug 'gleam-lang/gleam.vim', {'for': 'gleam'}
 call plug#end()
 
 " Use true colors

@@ -30,6 +30,9 @@
         - nnn
         - entr
         - bat
+        - xbindkeys
+        - dmenu
+        - sway
 
     - name: Install asdf
       git:
@@ -121,11 +124,6 @@
         fi
       loop:
         - .bash_profile
-        - .ctags
-        - .gitconfig
-        - .inputrc
-        - .tmux.conf
-        - .vimrc
         - .config/alacritty/alacritty.yml
         - .config/fish/config.fish
         - .config/fish/fishd.aura
@@ -133,9 +131,16 @@
         - .config/fish/functions
         - .config/nvim/init.vim
         - .config/ripgrep/config
+        - .config/sway/config
+        - .ctags
+        - .gitconfig
+        - .inputrc
         - .local/bin/rgs
         - .local/bin/router-stats
         - .local/bin/switch-audio
+        - .tmux.conf
+        - .vimrc
+        - .xbindkeysrc
 
     - name: Update GNOME settings
       dconf:
