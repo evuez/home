@@ -92,6 +92,9 @@ set $menu dmenu_run -nb '#282a36' -sf '#282a36' -sb '#ff79c6' -nf '#ff79c6' | xa
 
     # Web browser
     bindsym $mod+x exec firefox -P -no-remote
+
+    # File managers
+    bindsym $mod+g exec $term -e nnn
 #
 # Moving around:
 #
