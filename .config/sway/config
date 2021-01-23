@@ -71,7 +71,7 @@ set $menu dmenu_run -nb '#282a36' -sf '#282a36' -sb '#ff79c6' -nf '#ff79c6' | xa
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec "source $HOME/.bash_profile && $menu"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -85,6 +85,13 @@ set $menu dmenu_run -nb '#282a36' -sf '#282a36' -sb '#ff79c6' -nf '#ff79c6' | xa
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Shutdown and suspend
+    bindsym $mod+Shift+p exec systemctl poweroff
+    bindsym $mod+Shift+s exec systemctl suspend
+
+    # Web browser
+    bindsym $mod+x exec firefox -P -no-remote
 #
 # Moving around:
 #
