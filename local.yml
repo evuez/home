@@ -32,6 +32,7 @@
         - bat
         - dmenu
         - sway
+        - mako
 
     - name: Install asdf
       git:
@@ -128,6 +129,7 @@
         - .config/fish/fishd.aura
         - .config/fish/fishd.osiris.home
         - .config/fish/functions
+        - .config/mako/config
         - .config/nvim/init.vim
         - .config/ripgrep/config
         - .config/sway/config
