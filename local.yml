@@ -33,6 +33,7 @@
         - dmenu
         - sway
         - mako
+        - wl-clipboard
 
     - name: Install asdf
       git:
