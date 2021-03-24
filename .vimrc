@@ -72,6 +72,21 @@ hi CursorLine term=bold cterm=bold
 " Highlight current column
 set cursorcolumn
 
+" List used marks
+nmap <leader>m :Marks<cr>
+
+function! MarksList()
+  let s:marks_names = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let s:marks_list = split(s:marks_names, '\zs')
+  let localmarklist = map(copy(s:marks_list), '[v:val, line("''" . v:val)]')
+  let usedmarks = join(map(localmarklist, '(v:val[1]>0 ? v:val[0] : "")'),'')
+  return strlen(usedmarks) > 0?'  '.usedmarks.' ':''
+endfunction
+
+set statusline=%f\ %h%w%m%r%=
+set statusline+=%{MarksList()}
+set statusline+=%-14.(%l,%c%V%)\ %P
+
 " Enable incremental search
 set incsearch
 
