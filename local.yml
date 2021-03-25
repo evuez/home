@@ -7,7 +7,7 @@
   tasks:
     - name: Install packages
       become: true
-      dnf: name={{item}}
+      dnf: "name={{item}}"
       loop:
         - python3-psutil # Allows using `dconf` in Ansible
         - firefox
@@ -79,7 +79,7 @@
       loop: "{{check_user_directories.results}}"
 
     - name: Check user directories configuration
-      shell: xdg-user-dir {{item.name}}
+      shell: "xdg-user-dir {{item.name}}"
       loop:
         - {name: 'DESKTOP', path: 'desktop'}
         - {name: 'DOCUMENTS', path: 'documents'}
@@ -235,6 +235,6 @@
       lineinfile:
         path: /etc/dnf/dnf.conf
         regexp: "^{{item}}$"
-        line: {{item}}
+        line: "{{item}}"
       loop:
         - 'throttle=100k'
