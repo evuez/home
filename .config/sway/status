@@ -5,6 +5,6 @@ est_date=$(TZ='America/New_York' date +'%Y-%m-%d %I:%M%p')
 
 battery_charge=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ { print $2 }')
 
-wifi=$(nmcli general status | tail -n 1 | awk '{ if ($2 == "full") { print "✔" } else { print "!" } }')
+wifi=$(nmcli general status | tail -n 1 | awk '{ if ($2 == "full") { print "⇆" } else { print "!" } }')
 
 echo -n "$est_date / $cest_date | $battery_charge | $wifi "
