@@ -18,7 +18,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     if not set -q __git_cb
-        set __git_cb (set_color yellow)" "(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
+        set __git_cb (set_color $fish_color_keyword)" "(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
     end
 
     switch $USER
