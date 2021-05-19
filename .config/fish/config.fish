@@ -19,35 +19,40 @@ end
 
 # Dracula theme
 
-set -x COMMENT 6272a4
-set -x CYAN 8be9fd
-set -x GREEN 50fa7b
-set -x ORANGE ffb86c
-set -x PINK ff79c6
-set -x PURPLE bd93f9
-set -x RED ff5555
-set -x YELLOW f1fa8c
+set -l foreground f8f8f2
+set -l selection 44475a
+set -l comment 6272a4
+set -l red ff5555
+set -l orange ffb86c
+set -l yellow f1fa8c
+set -l green 50fa7b
+set -l purple bd93f9
+set -l cyan 8be9fd
+set -l pink ff79c6
 
-set fish_color_autosuggestion $COMMENT
-set fish_color_command $PINK
-set fish_color_comment $COMMENT
-set fish_color_cwd $CYAN
-set fish_color_cwd_root $RED
-set fish_color_end normal
-set fish_color_error $RED
-set fish_color_escape $CYAN
-set fish_color_history_current $CYAN
-set fish_color_host normal
-set fish_color_match $GREEN
-set fish_color_normal normal
-set fish_color_operator $CYAN
-set fish_color_param normal
-set fish_color_quote $YELLOW
-set fish_color_redirection $PURPLE
-set fish_color_search_match \x2d\x2dbackground\x3d$PURPLE
-set fish_color_selection \x2d\x2dbackground\x3d$PURPLE
-set fish_color_user $PURPLE
-set fish_color_valid_path \x2d\x2dunderline
+## Syntax Highlighting Colors
+
+set -g fish_color_normal $foreground
+set -g fish_color_command $cyan
+set -g fish_color_keyword $pink
+set -g fish_color_quote $yellow
+set -g fish_color_redirection $foreground
+set -g fish_color_end $orange
+set -g fish_color_error $red
+set -g fish_color_param $purple
+set -g fish_color_comment $comment
+set -g fish_color_selection --background=$selection
+set -g fish_color_search_match --background=$selection
+set -g fish_color_operator $green
+set -g fish_color_escape $pink
+set -g fish_color_autosuggestion $comment
+
+## Completion Pager Colors
+
+set -g fish_pager_color_progress $comment
+set -g fish_pager_color_prefix $cyan
+set -g fish_pager_color_completion $foreground
+set -g fish_pager_color_description $comment
 
 # Misc
 
