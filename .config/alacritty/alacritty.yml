@@ -427,6 +427,12 @@ background_opacity: 1.0
 #  program: /bin/bash
 #  args:
 #    - --login
+shell:
+  program: /usr/bin/bash
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 # Startup directory
 #
