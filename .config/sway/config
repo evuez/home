@@ -23,7 +23,7 @@ set $menu dmenu_run -nb '#282a36' -sf '#282a36' -sb '#ff79c6' -nf '#ff79c6' | xa
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/default.png fill
+output * bg ~/pictures/wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -250,7 +250,7 @@ bar {
     colors {
         statusline #f8f8f2
         background #282a36
-        inactive_workspace #44475a00 #44475a00 #ff79c6
+        inactive_workspace #44475aff #44475aff #ff79c6
         focused_workspace #ff79c6 #ff79c6 #282a36
         urgent_workspace #bd93f9 #bd93f9 #282a36
     }
@@ -259,6 +259,7 @@ bar {
 #
 # Windows
 #
+gaps inner 8
 default_border pixel 4
 client.focused #ff79c6 #ff79c6 #f8f8f2
 client.unfocused #44475a #44475a #f8f8f2

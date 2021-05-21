@@ -118,6 +118,9 @@ set nowrap
 " Disable cursor blink
 set guicursor=a:blinkon0
 
+" Set cursor to block in visual, underline in replace or beam in insert mode
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+
 " Remove trailing spaces on save
 au BufWritePre * :%s/\s\+$//e
 
