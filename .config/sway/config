@@ -261,7 +261,9 @@ bar {
 #
 gaps inner 8
 default_border pixel 4
-client.focused #ff79c6 #ff79c6 #f8f8f2
-client.unfocused #44475a #44475a #f8f8f2
+client.focused #ff79c6 #ff79c6 #f8f8f2 #f8f8f2
+client.unfocused #44475a #44475a #f8f8f2 #f8f8f2
+client.focused_inactive #44475a #44475a #f8f8f2 #f8f8f2
+client.urgent #ff5555 #ff5555 #ff5555 #f8f8f2
 
 include /etc/sway/config.d/*
