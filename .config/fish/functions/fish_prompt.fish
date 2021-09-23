@@ -17,14 +17,20 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_prompt_normal (set_color normal)
     end
 
-    if not set -q __git_cb
-        set __git_cb (set_color $fish_color_keyword)" "(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
-    end
-
+#    if not set -q __git_cb
+#        set __git_cb (set_color $fish_color_keyword)" "(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
+#    end
+#
+#    switch $USER
+#    case root
+#        printf ' %s%s%s# ' (set_color white) (prompt_pwd) $__git_cb
+#    case '*'
+#        printf ' %s%s%s$ ' (set_color white) (prompt_pwd) $__git_cb
+#    end
     switch $USER
     case root
-        printf ' %s%s%s# ' (set_color white) (prompt_pwd) $__git_cb
+        printf ' %s%s%s# ' (set_color white) (prompt_pwd) (set_color $fish_color_keyword) (fish_git_prompt)(set_color normal)
     case '*'
-        printf ' %s%s%s$ ' (set_color white) (prompt_pwd) $__git_cb
+        printf ' %s%s%s ' (set_color white) (prompt_pwd)(set_color $fish_color_keyword)(fish_git_prompt)(set_color normal)
     end
 end

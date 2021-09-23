@@ -4,6 +4,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x BC_ENV_ARGS "$HOME/.bc"
 set -x FZF_DEFAULT_COMMAND "rg --files --hidden --smart-case --glob !.git/"
+set -x ERL_AFLAGS "-kernel shell_history enabled"
 set PATH "$HOME/.cargo/bin" $PATH
 
 # Vim bindings
