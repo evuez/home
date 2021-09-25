@@ -20,6 +20,7 @@ end
 
 # Dracula theme
 
+set -l background 282a36
 set -l foreground f8f8f2
 set -l selection 44475a
 set -l comment 6272a4
@@ -33,6 +34,7 @@ set -l pink ff79c6
 
 ## Syntax Highlighting Colors
 
+set -g fish_color_background $background
 set -g fish_color_normal $foreground
 set -g fish_color_command $cyan
 set -g fish_color_keyword $pink

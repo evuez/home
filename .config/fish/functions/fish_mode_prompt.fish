@@ -3,21 +3,22 @@ function fish_mode_prompt --description "Displays the current mode"
   # Do nothing if not in vi mode
   if test "$fish_key_bindings" = "fish_vi_key_bindings"
     or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
+    set_color --bold 282a36
     switch $fish_bind_mode
       case default
-        set_color --bold ff005f
-        echo 🅽
+        set_color -b ff5555
+        echo ' n '
       case insert
-        set_color --bold 3a3335
-        echo 🅸
+        set_color -b f8f8f2
+        echo ' i '
       case replace_one
-        set_color --bold c6d8d3
-        echo 🆁
+        set_color -b 8be9fd
+        echo ' r '
       case visual
-        set_color --bold eb5e55
-        echo 🆅
+        set_color -b ffb86c
+        echo ' v '
     end
     set_color normal
-    echo -n ' '
+    set_color -b normal
   end
 end

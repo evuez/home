@@ -17,16 +17,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 Plug 'tpope/vim-surround'
 "" Language plugins
-Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
+Plug 'rescript-lang/vim-rescript', {'for': 'rescript'}
+Plug 'LnL7/vim-nix', {'for': 'nix'}
+Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}
+Plug 'gleam-lang/gleam.vim', {'for': 'gleam'}
 Plug 'hellerve/carp-vim', {'for': 'carp'}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact', 'tsx']}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
-Plug 'gleam-lang/gleam.vim', {'for': 'gleam'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 call plug#end()
 
 " Use true colors
