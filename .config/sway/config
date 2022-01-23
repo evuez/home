@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term ~/.local/bin/alacritty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -259,8 +259,8 @@ bar {
 #
 # Windows
 #
-gaps inner 8
-default_border pixel 4
+gaps inner 2
+default_border pixel 2
 client.focused #ff79c6 #ff79c6 #f8f8f2 #f8f8f2
 client.unfocused #44475a #44475a #f8f8f2 #f8f8f2
 client.focused_inactive #44475a #44475a #f8f8f2 #f8f8f2

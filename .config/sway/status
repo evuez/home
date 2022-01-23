@@ -7,4 +7,4 @@ battery_charge=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/
 
 wifi=$(nmcli general status | tail -n 1 | awk '{ if ($2 == "full") { print "⇆" } else { print "!" } }')
 
-echo -n "$est_date / $cest_date | $battery_charge | $wifi "
+echo -n "$est_date | $battery_charge | $wifi "
