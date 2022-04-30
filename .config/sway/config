@@ -22,8 +22,10 @@ set $menu dmenu_run -nb '#282a36' -sf '#282a36' -sb '#ff79c6' -nf '#ff79c6' | xa
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/pictures/wallpaper.jpg fill
+
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
 #
 # Example configuration:
 #
