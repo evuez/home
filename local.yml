@@ -29,6 +29,9 @@
         - sway
         - mako
         - wl-clipboard
+        - isync
+        - neomutt
+        - msmtp
 
     - name: Install asdf
       git:

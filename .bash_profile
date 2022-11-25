@@ -11,5 +11,5 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 
-export PATH="$HOME/.cargo/bin:$PATH"
 if [ -e /home/evuez/.nix-profile/etc/profile.d/nix.sh ]; then . /home/evuez/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+. "$HOME/.cargo/env"
