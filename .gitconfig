@@ -26,16 +26,27 @@
 [mergetool "merge3"]
 	cmd = vim -d -c \"wincmd l\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [pager]
-	diff = diff-highlight | less
-	log = diff-highlight | less
-	show = diff-highlight | less
+	diff = delta
+	log = delta
+	show = delta
 [interactive]
-	diffFilter = "diff-highlight"
+	diffFilter = delta --color-only --features=interactive
 [credential]
 	helper = store
 [protocol]
 	version = 2
 [init]
 	defaultBranch = main
+[diff]
+  colorMoved = default
 [color "status"]
 	unmerged = yellow
+[delta]
+	features = decorations
+  line-numbers = true
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-style = raw
+	file-style = blue
+  hunk-header-style = omit

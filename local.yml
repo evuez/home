@@ -30,8 +30,9 @@
         - mako
         - wl-clipboard
         - isync
-        - neomutt
-        - msmtp
+        - notmuch
+        - aerc
+        - age
 
     - name: Install asdf
       git:
