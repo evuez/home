@@ -41,7 +41,8 @@ set termguicolors
 syntax on
 
 " Set default color scheme
-silent! colorscheme dracula
+set background=light
+silent! colorscheme plain
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
