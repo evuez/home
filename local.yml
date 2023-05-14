@@ -33,6 +33,7 @@
         - notmuch
         - aerc
         - age
+        - ibm-plex-mono-fonts
 
     - name: Install asdf
       git:
