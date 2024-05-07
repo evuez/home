@@ -42,6 +42,8 @@ syntax on
 
 " Set default color scheme
 set background=light
+" silent! colorscheme selenized_bw
+" silent! colorscheme dracula
 silent! colorscheme plain
 
 " Make backspace behave in a sane manner.
@@ -265,9 +267,16 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 })
 --
 --local servers = { 'hls' }
-local servers = { rust_analyzer }
+
+local servers = { rust_analyzer, gopls }
 
 require'lspconfig'.rust_analyzer.setup{ on_attach = on_attach }
+nvim_lsp.gopls.setup{
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"},
+  on_attach = on_attach
+}
+
 -- for _, lsp in ipairs(servers) do
 --   nvim_lsp[lsp].setup {
 --     on_attach = on_attach,

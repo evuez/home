@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cest_date=$(TZ='Europe/Paris' date +'%Y-%m-%d %I:%M%p')
+cest_date=$(TZ='Europe/Paris' date +'%Y-%m-%d %H:%M')
 est_date=$(TZ='America/New_York' date +'%Y-%m-%d %I:%M%p')
 
 battery_charge=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ { print $2 }')
@@ -10,4 +10,4 @@ wifi=$(nmcli general status | tail -n 1 | awk '{ if ($2 == "full") { print "⇆"
 mem=$(free -t | awk 'NR == 2 {printf("mem: %d%"), $3/$2*100}')
 swap=$(free -t | awk 'NR == 3 {printf("swap: %d%"), $3/$2*100}')
 
-echo -n "$mem ｜ $swap ｜ $est_date ｜ $battery_charge ｜ $wifi "
+echo -n "$mem ｜ $swap ｜ $cest_date ｜ $battery_charge ｜ $wifi "
