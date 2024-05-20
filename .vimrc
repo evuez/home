@@ -46,6 +46,27 @@ set background=light
 " silent! colorscheme dracula
 silent! colorscheme plain
 
+" Conceal
+set cole=1
+syntax match Operator '=' conceal cchar=←
+syntax match Operator '!' conceal cchar=¬
+syntax match Operator '->' conceal cchar=→
+syntax match Operator '=>' conceal cchar=▸
+syntax match Operator '!=' conceal cchar=≠
+syntax match Operator '<=' conceal cchar=≤
+syntax match Operator '>=' conceal cchar=≥
+syntax match Operator '==' conceal cchar=≜
+syntax match Operator '&&' conceal cchar=∧
+syntax match Operator '||' conceal cchar=∨
+syntax keyword Normal fn conceal cchar=λ
+syntax keyword Keyword return conceal cchar=◀
+syntax keyword Keyword None conceal cchar=∅
+syntax keyword Keyword true conceal cchar=⊤
+syntax keyword Keyword false conceal cchar=⊥
+syntax keyword Keyword struct conceal cchar=∏
+syntax keyword Keyword enum conceal cchar=∐
+
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
