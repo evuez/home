@@ -1,0 +1,10 @@
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+
+[user]
+name = "evuez"
+email = "julien@mulga.net"
+
+[git]
+private-commits = "description(glob:'wip:*') | description(glob:'priv:*')"
