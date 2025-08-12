@@ -31,7 +31,6 @@ Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'ts', 'typescriptreact
 Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'peitalin/vim-jsx-typescript', {'for': ['typescriptreact', 'tsx']}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'ziglang/zig.vim', {'for': 'zig'}
 call plug#end()
 
 " Use true colors

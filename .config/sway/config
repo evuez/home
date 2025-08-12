@@ -31,9 +31,9 @@ output DP-2 resolution 1920x1800 position 0,0
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
 
-exec swayidle -w \
-     timeout 300 'swaylock -f -c 000000' \
-     after-resume 'swaymsg "output * power on"'
+# exec swayidle -w \
+#      timeout 300 'swaylock -f -c 000000' \
+#      after-resume 'swaymsg "output * power on"'
 #
 # Example configuration:
 #
@@ -258,7 +258,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while ~/.config/sway/status; do sleep 1; done
+    status_command while ~/.config/sway/status; do sleep 10; done
 
     colors {
         statusline #f8f8f2
